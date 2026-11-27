@@ -23,6 +23,44 @@
  .room4 .wallnotes{top:48%;left:5%;right:5%;bottom:21%;overflow-x:auto;overflow-y:auto;align-items:flex-start}
  .room4 .wallnotes .sticky{min-width:220px;width:220px;flex-shrink:0}
 }
+
+/* Mobile adjustments: preserve a horizontal diary sheet and reveal the study lamp. */
+@media (max-width:700px) {
+  /* Keep the same framed collage concept as desktop, rather than a very narrow diary strip. */
+  .room1 .gallery {
+    top:43%; right:5%; width:76%; height:34%;
+    border-width:9px; transform:rotate(2deg);
+  }
+  .room1 .gallery:before { inset:7px; border-width:2px; }
+  .room1 .gallery-board {
+    inset:14px 12px; padding:3px; gap:9px;
+    justify-content:space-evenly; align-items:center;
+  }
+  .room1 .gallery-card {width:34%; min-width:0; height:112px; padding:6px 6px 12px; flex-shrink:0;}
+  .room1 .gallery-card .mini-photo {height:83px;}
+  .room1 .gallery-note {
+    box-sizing:border-box; flex:1; width:auto; min-width:0; min-height:0;
+    max-height:100%; padding:10px 10px 9px; transform:rotate(-2deg);
+  }
+  .room1 .gallery-note strong {font-size:13px;line-height:1.15;margin-bottom:4px;}
+  .room1 .gallery-note p {font-size:9.5px;line-height:1.18;overflow-wrap:normal;}
+  .room1 .gallery-note .doodle {font-size:8.5px;line-height:1.15;margin-top:4px;}
+  .room1 .obj-photo {left:13%;width:100px;bottom:22%;}
+  .room1 .obj-photo svg {height:124px;}
+  /* Make the lamp stand beside the envelope on the tabletop, not behind it. */
+  .room3 .lamp {right:6%;bottom:35%;width:58px;height:112px;z-index:5;}
+  .room3 .lamp:before {left:-23px;width:52px;height:30px;}
+  .room3 .obj-letter {left:27%;width:142px;bottom:28%;z-index:6;}
+  .room3 .obj-letter svg {height:92px;}
+}
+@media (max-width:380px) {
+  .room1 .gallery {right:3%;width:81%;height:35%;}
+  .room1 .gallery-board {gap:6px;inset:12px 9px;}
+  .room1 .gallery-note {padding:8px 7px;}
+  .room1 .gallery-note p {font-size:9px;line-height:1.15;}
+  .room1 .gallery-card {width:31%;}
+  .room3 .lamp {right:3%;}
+}
 </style></head><body>
 <header class="site-head"><div class="brand">INTERACTIVE STUDY</div><div class="headright"><div class="step" id="step">00 / INTRO</div><button class="small-btn" id="about">ABOUT</button><button class="small-btn" id="reset">RESTART</button></div></header>
 <main>
